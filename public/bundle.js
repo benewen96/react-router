@@ -56,27 +56,32 @@
 
 	var _reactRouter = __webpack_require__(183);
 
-	var _Template = __webpack_require__(244);
+	var _Template = __webpack_require__(239);
 
 	var _Template2 = _interopRequireDefault(_Template);
 
-	var _Demo = __webpack_require__(243);
+	var _Demo = __webpack_require__(241);
 
 	var _Demo2 = _interopRequireDefault(_Demo);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _Home = __webpack_require__(244);
 
-	// import our react routes
+	var _Home2 = _interopRequireDefault(_Home);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
-	    { path: '/', component: _Template2.default },
+	    { component: _Template2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/demo', component: _Demo2.default })
 	  )
 	), document.getElementById('app'));
+
+	// import our react routes
 
 /***/ },
 /* 1 */
@@ -26767,7 +26772,7 @@
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26777,57 +26782,33 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(183);
+
+	var _Nav = __webpack_require__(240);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Card = function Card(props) {
+	// this is our main template component, all routes are rendered at {props.children}
+
+	var Template = function Template(props) {
 	  return _react2.default.createElement(
-	    "div",
-	    { className: "panel panel-default" },
+	    'div',
+	    null,
+	    _react2.default.createElement(_Nav2.default, { brandImage: 'img/logo.png' }),
 	    _react2.default.createElement(
-	      "div",
-	      { className: "panel-body" },
+	      'div',
+	      { className: 'container' },
 	      props.children
 	    )
 	  );
 	};
-	exports.default = Card;
+
+	exports.default = Template;
 
 /***/ },
 /* 240 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Card = function Card(props) {
-	  return _react2.default.createElement(
-	    "div",
-	    { className: "thumbnail" },
-	    _react2.default.createElement(
-	      "div",
-	      { className: "caption" },
-	      _react2.default.createElement(
-	        "h3",
-	        { style: { "fontSize": "26px" } },
-	        props.title
-	      ),
-	      props.children
-	    )
-	  );
-	};
-	exports.default = Card;
-
-/***/ },
-/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26864,8 +26845,7 @@
 	exports.default = Nav;
 
 /***/ },
-/* 242 */,
-/* 243 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26878,11 +26858,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _JazzyCard = __webpack_require__(240);
+	var _JazzyCard = __webpack_require__(242);
 
 	var _JazzyCard2 = _interopRequireDefault(_JazzyCard);
 
-	var _Card = __webpack_require__(239);
+	var _Card = __webpack_require__(243);
 
 	var _Card2 = _interopRequireDefault(_Card);
 
@@ -26924,6 +26904,69 @@
 	exports.default = Demo;
 
 /***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Card = function Card(props) {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "thumbnail" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "caption" },
+	      _react2.default.createElement(
+	        "h3",
+	        { style: { "fontSize": "26px" } },
+	        props.title
+	      ),
+	      props.children
+	    )
+	  );
+	};
+	exports.default = Card;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Card = function Card(props) {
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "panel panel-default" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "panel-body" },
+	      props.children
+	    )
+	  );
+	};
+	exports.default = Card;
+
+/***/ },
 /* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -26939,28 +26982,41 @@
 
 	var _reactRouter = __webpack_require__(183);
 
-	var _Nav = __webpack_require__(241);
+	var _JazzyCard = __webpack_require__(242);
 
-	var _Nav2 = _interopRequireDefault(_Nav);
+	var _JazzyCard2 = _interopRequireDefault(_JazzyCard);
+
+	var _Card = __webpack_require__(243);
+
+	var _Card2 = _interopRequireDefault(_Card);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// this is our main template component, all routes are rendered at {props.children}
+	// this is a page called Demo, it's nested in the Template route in main.js so will
+	// inherit the Template layout
 
-	var Template = function Template(props) {
+	var Home = function Home() {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    _react2.default.createElement(_Nav2.default, { brandImage: 'img/logo.png' }),
 	    _react2.default.createElement(
-	      'div',
-	      { className: 'container' },
-	      props.children
+	      _Card2.default,
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        'I\'m the home page.'
+	      ),
+	      _react2.default.createElement(
+	        _reactRouter.Link,
+	        { to: '/demo' },
+	        'Demo'
+	      )
 	    )
 	  );
 	};
 
-	exports.default = Template;
+	exports.default = Home;
 
 /***/ }
 /******/ ]);
