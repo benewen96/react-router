@@ -1,11 +1,8 @@
-# React, Webpack, Express
-
-Webpack entry: `main.js`
-Application entry: `server.js`
-
-Add all react components under the `/components` dir, with extension `.js` (even if JSX).
-
-Also require react components under `main.js` like so: `require('./components/hello_world.js')`
-
-Usage: `npm start` then head to `http://localhost:3000`
-# react_example
+fyBSZWFjdCwgV2VicGFjaywgRXhwcmVzcwoKV2VicGFjayBlbnRyeTogYG1h
+aW4uanNgCkFwcGxpY2F0aW9uIGVudHJ5OiBgc2VydmVyLmpzYAoKQWRkIGFs
+bCByZWFjdCBjb21wb25lbnRzIHVuZGVyIHRoZSBgL2NvbXBvbmVudHNgIGRp
+ciwgd2l0aCBleHRlbnNpb24gYC5qc2AgKGV2ZW4gaWYgSlNYKS4KCkFsc28g
+cmVxdWlyZSByZWFjdCBjb21wb25lbnRzIHVuZGVyIGBtYWluLmpzYCBsaWtl
+IHNvOiBgcmVxdWlyZSgnLi9jb21wb25lbnRzL2hlbGxvX3dvcmxkLmpzJylg
+CgpVc2FnZTogYG5wbSBzdGFydGAgdGhlbiBoZWFkIHRvIGBodHRwOi8vbG9j
+YWxob3N0OjMwMDBgCiMgcmVhY3RfZXhhbXBsZQo=
